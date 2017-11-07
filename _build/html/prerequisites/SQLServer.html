@@ -1,0 +1,194 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SQL Serverのセットアップ &#8212; Sitecore 9.0 standalone installation guide 1 ドキュメント</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="sql-server">
+<h1>SQL Serverのセットアップ<a class="headerlink" href="#sql-server" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>SQL Server および SQL Server Management Studio をインストールします。</p>
+<div class="section" id="sql-server-2016">
+<h2>SQL Server 2016 のインストール<a class="headerlink" href="#sql-server-2016" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>SQL Server 2016 SP1 Developer Edition をインストールします。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Service Pack が適用されていないSQL Server 2016のバージョンをインストールした場合は、Service Packをインストールしてください。ビルドバージョンが 13.0.4001.0 の場合は、SP1が適用されています。詳細なバージョン情報は <a class="reference external" href="https://support.microsoft.com/ja/help/3177312">こちら</a> を参照。</p>
+</div>
+<p>インストーラーを起動します。　SQL Server インストールセンター が起動したら、 左側になる <strong>インストール</strong> をクリックします。</p>
+<div class="figure">
+<img alt="../_images/pre-sql01.png" src="../_images/pre-sql01.png" />
+</div>
+<p>表示された画面で、 <strong>SQL Server の新規スタンドアロン インストールを実行するか、既存のインストールに機能を追加</strong> を選択します。</p>
+<div class="figure">
+<img alt="../_images/pre-sql02.png" src="../_images/pre-sql02.png" />
+</div>
+<p>プロダクトキー画面で必要に応じて、 プロダクトキーを入力します。 <strong>次へ</strong> をクリックします。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Developer Edition の場合は、入力する必要はありません。</p>
+</div>
+<div class="figure">
+<img alt="../_images/pre-sql03.png" src="../_images/pre-sql03.png" />
+</div>
+<p>ライセンス条項画面が表示されたら、 <strong>ライセンスに同意します。</strong>  を選択して、 <strong>次へ</strong> をクリック。</p>
+<p>Microsoft Update 画面が表示されたら、 <strong>Microsoft Update を使用して更新プログラムを確認する。</strong> を必要に応じてチェックして、 <strong>次へ</strong> をクリック。</p>
+<p>インストール ルール画面が表示されます。エラー(失敗)がないことを確認して、 <strong>次へ</strong> をクリックします。もし、チェック項目でエラー(失敗)がある場合は、内容を確認して、問題を解決してください。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Windows ファイアウォール ルールは、スタンドアロン環境にインストールする場合は、無視できます。</p>
+</div>
+<div class="figure">
+<img alt="../_images/pre-sql05.png" src="../_images/pre-sql05.png" />
+</div>
+<p>機能の選択 画面が表示されたら、 データベースエンジンサービス を選択して、 <strong>次へ</strong> をクリックします。</p>
+<div class="figure">
+<img alt="../_images/pre-sql04.png" src="../_images/pre-sql04.png" />
+</div>
+<p>インスタンスの構成 画面でデフォルトのまま、 <strong>次へ</strong> をクリックします。</p>
+<div class="figure">
+<img alt="../_images/pre-sql06.png" src="../_images/pre-sql06.png" />
+</div>
+<p>サーバーの構成 が表示されたら、デフォルトのまま <strong>次へ</strong> をクリックします。</p>
+<div class="figure">
+<img alt="../_images/pre-sql07.png" src="../_images/pre-sql07.png" />
+</div>
+<p>データベースエンジンの構成 画面で、 サーバーの構成で次のように変更して**次へ** をクリックします。</p>
+<ul class="simple">
+<li>認証モードで混合モードを選択</li>
+<li>パスワードとパスワードの確認入力に saユーザーのパスワードを入力</li>
+<li>SQL Server 管理者の指定で、 <strong>現在のユーザーの追加</strong> ボタンをクリック</li>
+</ul>
+<div class="figure">
+<img alt="../_images/pre-sql08.png" src="../_images/pre-sql08.png" />
+</div>
+<p>インストールの準備完了 画面が表示されたら <strong>次へ</strong> をクリックします。</p>
+<div class="figure">
+<img alt="../_images/pre-sql09.png" src="../_images/pre-sql09.png" />
+</div>
+<p>完了画面が表示されたら、 <strong>閉じる</strong> ボタンをクリックします。インストールセンターを閉じて、再起動します。</p>
+</div>
+<div class="section" id="sql-server-management-studio">
+<h2>SQL Server Management Studio のインストール<a class="headerlink" href="#sql-server-management-studio" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>続いて、SQL Server Management Studio をインストールします。今回は本ドキュメント作成時の最新のバージョン(17.3)をインストールすることにします。</p>
+<p><a class="reference external" href="https://docs.microsoft.com/ja-jp/sql/ssms/download-sql-server-management-studio-ssms">こちら</a> にアクセスして、ページ内のダウンロードリンクをクリックします。ダウンロードされる最新バージョンは、図のバージョンと異なる場合があります。</p>
+<div class="figure">
+<img alt="../_images/pre-ssms01.png" src="../_images/pre-ssms01.png" />
+</div>
+<p>同ページ内の <a class="reference external" href="https://docs.microsoft.com/ja-jp/sql/ssms/sql-server-management-studio-changelog-ssms#previous-ssms-releases">以前リリース</a> をクリックすると、過去バージョンをダウンロードできるページに移動できるので、そちらからだSQL Server 2016に対応した Management Studio のインストーラーをダウンロードできます。</p>
+<img alt="../_images/pre-ssms02.png" src="../_images/pre-ssms02.png" />
+<p>ダウンロードした SSMS-Setup-JPN.exe を <strong>右クリック &gt; プロパティ</strong> を選択して、プロパティ画面にアクセスします。<code class="docutils literal"><span class="pre">ブロックの解除</span></code> を選択して、 <strong>適用</strong> をクリックします。</p>
+<p>SSMS-Setup-JPN.exe をダブルクリックしてウィザードを起動します。 <strong>インストール</strong> をクリックします。</p>
+<div class="figure">
+<img alt="../_images/pre-ssms03.png" src="../_images/pre-ssms03.png" />
+</div>
+<p>インストールが始まるので、しばらく待ちます。インストールが完了したら、 <strong>閉じる</strong> をクリックします。</p>
+<div class="figure">
+<img alt="../_images/pre-ssms04.png" src="../_images/pre-ssms04.png" />
+</div>
+</div>
+<div class="section" id="id1">
+<h2>SQL Server の構成<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>包含データベースを有効化します。Microsoft SQL Server Management Studio を起動します。
+<code class="docutils literal"><span class="pre">Win</span></code> キーをタイプして、スタートメニューから、起動できます。</p>
+<div class="figure">
+<img alt="../_images/pre-ssms05.png" src="../_images/pre-ssms05.png" />
+</div>
+<p>サーバーへの接続ダイアログで、 <strong>接続</strong> ボタンをクリックします。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">SQL Serverのインストール時にセットアップユーザーを管理者に追加している場合は、そのままログインできるはずです。</p>
+</div>
+<p>ツールバーから <strong>新しいクエリ</strong> を選択します。</p>
+<div class="figure">
+<img alt="../_images/pre-ssms06.png" src="../_images/pre-ssms06.png" />
+</div>
+<p>次のコードを入力して、 <code class="docutils literal"><span class="pre">F5</span></code> キーをタイプするか、 ツールバーの実行ボタンをクリックします。</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span>sp_configure &#39;contained database authentication&#39;, 1;
+GO
+RECONFIGURE;
+GO
+
+以上で包含データベースの有効化が完了です。
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>クイック検索</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="検索" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, samatsu.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/prerequisites/SQLServer.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
