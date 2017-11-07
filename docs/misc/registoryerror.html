@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sitecore のインストール &mdash; Standalone Quick Setup Guide 1.0 ドキュメント</title>
+  <title>レジストリ キー へのアクセスが拒否されました。エラーの回避 &mdash; Standalone Quick Setup Guide 1.0 ドキュメント</title>
   
 
   
@@ -36,8 +36,9 @@
               href="../genindex.html"/>
         <link rel="search" title="検索" href="../search.html"/>
     <link rel="top" title="Standalone Quick Setup Guide 1.0 ドキュメント" href="../index.html"/>
-        <link rel="next" title="SIFのセットアップ" href="sif.html"/>
-        <link rel="prev" title="SIFに必要なソフトウェアのインストール" href="../prerequisites/prep-sif.html"/> 
+        <link rel="up" title="補足情報" href="index.html"/>
+        <link rel="next" title="日本語化の設定" href="japaneseui.html"/>
+        <link rel="prev" title="補足情報" href="index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -93,10 +94,10 @@
               <p class="caption"><span class="caption-text">コンテンツ:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">必要なソフトウェア のインストール</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Sitecore のインストール</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sif.html">SIFのセットアップ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sitecore.html">Sitecoreのセットアップ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="post-steps.html">インストール後の処理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Sitecore のインストール</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">補足情報</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">レジストリ キー へのアクセスが拒否されました。エラーの回避</a></li>
+<li class="toctree-l2"><a class="reference internal" href="japaneseui.html">日本語化の設定</a></li>
 </ul>
 </li>
 </ul>
@@ -143,7 +144,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Sitecore のインストール</li>
+          <li><a href="index.html">補足情報</a> &raquo;</li>
+        
+      <li>レジストリ キー へのアクセスが拒否されました。エラーの回避</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -160,34 +163,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sitecore">
-<h1>Sitecore のインストール<a class="headerlink" href="#sitecore" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>事前準備が終わったら、Sitecoreのインストールを行います。</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="sif.html">SIFのセットアップ</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sif.html#id1">SIFのインストール</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sif.html#id2">SIFの動作確認</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="sitecore.html">Sitecoreのセットアップ</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sitecore.html#id1">リソースのダウンロード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sitecore.html#install">Install スクリプトの準備</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sitecore.html#id2">ライセンスファイルの準備</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sitecore.html#id3">Install スクリプトの実行</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="post-steps.html">インストール後の処理</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="post-steps.html#xdb">xDBシャードデータベース用のデータベースユーザーの作成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="post-steps.html#id2">インデックスのリビルド</a></li>
-<li class="toctree-l2"><a class="reference internal" href="post-steps.html#id3">リンクデータベースのリビルド</a></li>
-<li class="toctree-l2"><a class="reference internal" href="post-steps.html#id4">マーケティング定義の配置</a></li>
-<li class="toctree-l2"><a class="reference internal" href="post-steps.html#expires">静的コンテンツに対する Expires ヘッダーの設定</a></li>
-<li class="toctree-l2"><a class="reference internal" href="post-steps.html#ip">IPジオロケーションルックアップ処理の無効化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="post-steps.html#iis">IISのリセット</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="id1">
+<h1>レジストリ キー へのアクセスが拒否されました。エラーの回避<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>SitecoreのWebサイトが既定の ApplicationIdentity ユーザーで実行されている場合、Sitecoreのログファイルに次のような警告メッセージが記録されます。</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>レジストリ キー 『Global』 へのアクセスが拒否されました。</dd>
+</dl>
+<p>これはSitecore の パフォーマンスログを有効化している状態でかつ、アプリケーションプールの実行ユーザーが <code class="docutils literal"><span class="pre">Performance</span> <span class="pre">Log</span> <span class="pre">Users</span></code> グループのメンバーになっていない場合に発生します。</p>
+<p>そのため、この問題を回避するには、 アプリケーションプールの実行ユーザーをデフォルトの ApplicationPoolIdentity から Network Service に変更します。</p>
+<div class="figure">
+<img alt="../_images/misc-regerr01.png" src="../_images/misc-regerr01.png" />
+</div>
+<p>もしくは、アプリケーションプールの実行ユーザーを <code class="docutils literal"><span class="pre">Performance</span> <span class="pre">Log</span> <span class="pre">Users</span></code> グループのメンバーにします。 デフォルトのApplicationPoolIdentity が実行ユーザーに指定されている場合は、実際にApplicationPoolIdentityというユーザーがいるわけではありません。例えば xp0.sc というサイトのApplicationPoolIdentityの実際のアカウントは、次の図のように <code class="docutils literal"><span class="pre">IIS</span> <span class="pre">AppPool\xp0.sc</span></code> になります。</p>
+<div class="figure">
+<img alt="../_images/misc-regerr02.png" src="../_images/misc-regerr02.png" />
 </div>
 </div>
 
@@ -201,10 +191,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="sif.html" class="btn btn-neutral float-right" title="SIFのセットアップ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="japaneseui.html" class="btn btn-neutral float-right" title="日本語化の設定" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../prerequisites/prep-sif.html" class="btn btn-neutral" title="SIFに必要なソフトウェアのインストール" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="補足情報" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

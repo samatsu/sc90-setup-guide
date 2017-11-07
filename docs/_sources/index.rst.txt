@@ -18,11 +18,7 @@ Sitecore 9.0 スタンドアロンインストレーションガイド
 
    prerequisites/index
    installation/index
+   misc/index
 
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

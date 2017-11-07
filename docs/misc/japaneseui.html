@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sitecore のインストール &mdash; Standalone Quick Setup Guide 1.0 ドキュメント</title>
+  <title>日本語化の設定 &mdash; Standalone Quick Setup Guide 1.0 ドキュメント</title>
   
 
   
@@ -36,8 +36,8 @@
               href="../genindex.html"/>
         <link rel="search" title="検索" href="../search.html"/>
     <link rel="top" title="Standalone Quick Setup Guide 1.0 ドキュメント" href="../index.html"/>
-        <link rel="next" title="SIFのセットアップ" href="sif.html"/>
-        <link rel="prev" title="SIFに必要なソフトウェアのインストール" href="../prerequisites/prep-sif.html"/> 
+        <link rel="up" title="補足情報" href="index.html"/>
+        <link rel="prev" title="レジストリ キー へのアクセスが拒否されました。エラーの回避" href="registoryerror.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -93,10 +93,14 @@
               <p class="caption"><span class="caption-text">コンテンツ:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">必要なソフトウェア のインストール</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Sitecore のインストール</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sif.html">SIFのセットアップ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sitecore.html">Sitecoreのセットアップ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="post-steps.html">インストール後の処理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Sitecore のインストール</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">補足情報</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="registoryerror.html">レジストリ キー へのアクセスが拒否されました。エラーの回避</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">日本語化の設定</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">日本語の言語アイテムの追加</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">日本語を使用するパッチファイルを配置</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -143,7 +147,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Sitecore のインストール</li>
+          <li><a href="index.html">補足情報</a> &raquo;</li>
+        
+      <li>日本語化の設定</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -160,34 +166,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sitecore">
-<h1>Sitecore のインストール<a class="headerlink" href="#sitecore" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>事前準備が終わったら、Sitecoreのインストールを行います。</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="sif.html">SIFのセットアップ</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sif.html#id1">SIFのインストール</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sif.html#id2">SIFの動作確認</a></li>
+  <div class="section" id="id1">
+<h1>日本語化の設定<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Sitecoreの編集環境とデフォルトのライブサイトのデフォルトの言語を日本語にする方法を記載します。</p>
+<p>手順としては次の通り</p>
+<div class="section" id="id2">
+<h2>日本語の言語アイテムの追加<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Sitecoreの編集環境にログインしてコントロールパネルの LOCALIZATION &gt; Add a new language を選択します。
+ここで日本語を選択して追加します。</p>
+<div class="figure">
+<img alt="../_images/misc-japanese-ui01.png" src="../_images/misc-japanese-ui01.png" />
+</div>
+</div>
+<div class="section" id="id3">
+<h2>日本語を使用するパッチファイルを配置<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次の言語をデフォルトで日本語にします。</p>
+<ul class="simple">
+<li>Sitecore クライアントインタフェース</li>
+<li>編集するコンテンツの言語</li>
+<li>デフォルトのライブサイトの言語</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="sitecore.html">Sitecoreのセットアップ</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sitecore.html#id1">リソースのダウンロード</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sitecore.html#install">Install スクリプトの準備</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sitecore.html#id2">ライセンスファイルの準備</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sitecore.html#id3">Install スクリプトの実行</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="post-steps.html">インストール後の処理</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="post-steps.html#xdb">xDBシャードデータベース用のデータベースユーザーの作成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="post-steps.html#id2">インデックスのリビルド</a></li>
-<li class="toctree-l2"><a class="reference internal" href="post-steps.html#id3">リンクデータベースのリビルド</a></li>
-<li class="toctree-l2"><a class="reference internal" href="post-steps.html#id4">マーケティング定義の配置</a></li>
-<li class="toctree-l2"><a class="reference internal" href="post-steps.html#expires">静的コンテンツに対する Expires ヘッダーの設定</a></li>
-<li class="toctree-l2"><a class="reference internal" href="post-steps.html#ip">IPジオロケーションルックアップ処理の無効化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="post-steps.html#iis">IISのリセット</a></li>
-</ul>
-</li>
-</ul>
+<p>Sitecore がインストールされたフォルダーの <code class="docutils literal"><span class="pre">App_Config\Sitecore\CMS.Core</span></code> をエクスプローラーで開きます。 例えば、 C:inetpubwwwrootxp0.scApp_ConfigSitecoreCMS.Core となります。
+フォルダーの、Sitecore.DefaultLanguage.config をコピーします。</p>
+<div class="figure">
+<img alt="../_images/misc-japanese-ui02.png" src="../_images/misc-japanese-ui02.png" />
+</div>
+<p>コピーしたファイルを <code class="docutils literal"><span class="pre">App_Config\Include</span></code> フォルダーに貼り付けす。</p>
+<div class="figure">
+<img alt="../_images/misc-japanese-ui03.png" src="../_images/misc-japanese-ui03.png" />
+</div>
+<p>ファイルを開き、 <code class="docutils literal"><span class="pre">en</span></code> が設定されている箇所を <code class="docutils literal"><span class="pre">ja-jp</span></code> に変更します(4箇所あります)。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">マルチサイトを実装する場合は、既存の設定を参考にして、追加したサイトのデフォルトの言語を変更してください。</p>
+</div>
+<p>これで、ライブサイトや、編集環境のUIおよび編集用のコンテンツの言語がデフォルトで日本語になります。</p>
+<div class="figure">
+<img alt="../_images/misc-japanese-ui04.png" src="../_images/misc-japanese-ui04.png" />
+</div>
 </div>
 </div>
 
@@ -201,10 +217,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="sif.html" class="btn btn-neutral float-right" title="SIFのセットアップ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="../prerequisites/prep-sif.html" class="btn btn-neutral" title="SIFに必要なソフトウェアのインストール" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="registoryerror.html" class="btn btn-neutral" title="レジストリ キー へのアクセスが拒否されました。エラーの回避" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
