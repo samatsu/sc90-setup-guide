@@ -3,9 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Sitecore 9.0 スタンドアロン環境クイックセットアップガイド
+Sitecore 9.0 クイックセットアップガイド
 ======================================================================
-このドキュメントでは、Sitecore ９環境評価および開発ように、Sitecore 9のスタンドアロン環境を構築する手順を記載します。
+このドキュメントでは、Sitecore ９環境評価および開発用に、単一サーバーのスタンドアロン環境で動作するのSitecore XP 9の環境を構築する手順を記載します。
 インストールに利用したソフトウェアのバージョンは次の通りです。
 
   :OS: Windows Server 2016 Standard
