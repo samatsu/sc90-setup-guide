@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Sitecore 9.0 スタンドアロンインストレーションガイド
+Sitecore 9.0 スタンドアロン環境クイックセットアップガイド
 ======================================================================
 このドキュメントでは、Sitecore ９環境評価および開発ように、Sitecore 9のスタンドアロン環境を構築する手順を記載します。
 インストールに利用したソフトウェアのバージョンは次の通りです。

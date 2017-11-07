@@ -47,7 +47,7 @@ master_doc = 'index'
 
 # General information about the project.
 #project = 'Sitecore 9.0 standalone installation guide'
-project = 'Standalone Quick Setup Guide'
+project = 'Sitecore 9.0 クイックセットアップガイド'
 copyright = '2017, samatsu'
 author = 'samatsu'
 
