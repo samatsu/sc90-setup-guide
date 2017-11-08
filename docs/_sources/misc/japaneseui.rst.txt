@@ -7,7 +7,7 @@ Sitecoreの編集環境とデフォルトのライブサイトのデフォルト
 
 日本語の言語アイテムの追加
 ================================================================
-Sitecoreの編集環境にログインしてコントロールパネルの LOCALIZATION > Add a new language を選択します。
+Sitecoreの編集環境にログインしてコントロールパネルの **LOCALIZATION > Add a new language** を選択します。
 ここで日本語を選択して追加します。
 
 .. figure:: /images/misc/misc-japanese-ui01.png

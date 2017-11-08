@@ -104,7 +104,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id4">マーケティング定義の配置</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#expires">静的コンテンツに対する Expires ヘッダーの設定</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ip">IPジオロケーションルックアップ処理の無効化</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#iis">IISのリセット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iis">IISの再起動</a></li>
 </ul>
 </li>
 </ul>
@@ -178,7 +178,7 @@
 <p>Sitecoreをインストールしたら、 Installation Guide の内容に従って、インストレーションの後処理を実施します。Sitecore 9.0 Initial Release用の Installation Guideの6章の手順に従って、後処理を実施していきます。バージョンによって作業が異なる可能性があるので、利用するSitecoreのバージョンのInstalltion GuideのSitecore XP Post-Installation Stepsを参照するようにしてください。</p>
 <div class="section" id="xdb">
 <h2>xDBシャードデータベース用のデータベースユーザーの作成<a class="headerlink" href="#xdb" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>コレクションデータベースにアクセスするSQLユーザー(デフォルトでcollectionuser)をSQLサーバー上に作成します。</p>
+<p>シャード構成されたコレクションデータベースにアクセスするSQLユーザー(デフォルトでcollectionuser)をSQLサーバー上に作成します。</p>
 <p>SQL Server Management Studio を起動して、SQL データベースサーバーに接続します。</p>
 <p>ツールバーの <strong>新しいクエリ</strong> をクリックします。</p>
 <div class="figure">
@@ -222,8 +222,10 @@
 <div class="figure">
 <img alt="../_images/ins-post07.png" src="../_images/ins-post07.png" />
 </div>
-<p>定義の種類がすべて選択されていることを確認してから、 <strong>Deploy</strong> をクリックします。
-.. figure:: /images/installation/ins-post08.png</p>
+<p>定義の種類がすべて選択されていることを確認してから、 <strong>Deploy</strong> をクリックします。</p>
+<div class="figure">
+<img alt="../_images/ins-post08.png" src="../_images/ins-post08.png" />
+</div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">Deployの処理は時間がかかります。</p>
@@ -250,8 +252,8 @@
 <p>IPアドレスから、ロケーション情報をルックアップするサービスを利用していない場合は、ルックアップ処理を無効化できます。 Installation Guideの Tracking Configuration セクションに従って、無効化してください。有効のままでも特に問題はありません。</p>
 </div>
 <div class="section" id="iis">
-<h2>IISのリセット<a class="headerlink" href="#iis" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>最後に、 iisreset でIISを再起動します。</p>
+<h2>IISの再起動<a class="headerlink" href="#iis" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>最後に、コマンドプロンプトから <code class="docutils literal"><span class="pre">iisreset</span></code> を実行してIISを再起動します。</p>
 <p>これでセットアップ完了です。</p>
 </div>
 </div>
