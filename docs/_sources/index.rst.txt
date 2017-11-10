@@ -12,6 +12,8 @@ Sitecore 9.0 クイックセットアップガイド
   :Detabase:    SQL Server 2016 SP1 Developer Edition 
   :Sitecore:    9.0 Initial Release
 
+.. warning:: スタンドアロン(XP0)環境を構築する場合は、 Windows Server 2016以降かWindows 10をご利用ください。
+
 .. toctree::
    :maxdepth: 2
    :caption: コンテンツ:
