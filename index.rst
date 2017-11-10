@@ -9,7 +9,7 @@ Sitecore 9.0 クイックセットアップガイド
 インストールに利用したソフトウェアのバージョンは次の通りです。
 
   :OS: Windows Server 2016 Standard
-  :Detabase:    SQL Server 2016 Developer Edition
+  :Detabase:    SQL Server 2016 SP1 Developer Edition 
   :Sitecore:    9.0 Initial Release
 
 .. toctree::
