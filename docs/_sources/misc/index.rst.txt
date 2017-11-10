@@ -8,3 +8,4 @@
 
    registoryerror
    japaneseui
+   video
