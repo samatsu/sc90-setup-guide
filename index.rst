@@ -12,6 +12,8 @@ Sitecore 9.0 クイックセットアップガイド
   :Detabase:    SQL Server 2016 SP1 Developer Edition 
   :Sitecore:    9.0 Initial Release
 
+Visual Studio Community Editionと同様に、 SQL Server Deloper Edition も無償でWebから入手できます。また、Expressでも問題なく動作するはずです。
+
 .. warning:: スタンドアロン(XP0)環境を構築する場合は、 Windows Server 2016以降かWindows 10をご利用ください。
 
 .. toctree::

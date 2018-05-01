@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>レジストリ キー へのアクセスが拒否されました。エラーの回避 &mdash; クイックセットアップガイド 1.0 ドキュメント</title>
+  <title>Microsoft Visual C++ 2015 再配布可能パッケージのインストール &mdash; クイックセットアップガイド 1.0 ドキュメント</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="日本語化の設定" href="japaneseui.html" />
-    <link rel="prev" title="補足情報" href="index.html" /> 
+    <link rel="next" title="Sitecore のインストール" href="../installation/index.html" />
+    <link rel="prev" title="SIFに必要なソフトウェアのインストール" href="prep-sif.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -85,14 +85,19 @@
             
               <p class="caption"><span class="caption-text">コンテンツ:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">必要なソフトウェア のインストール</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Sitecore のインストール</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">補足情報</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">レジストリ キー へのアクセスが拒否されました。エラーの回避</a></li>
-<li class="toctree-l2"><a class="reference internal" href="japaneseui.html">日本語化の設定</a></li>
-<li class="toctree-l2"><a class="reference internal" href="video.html">インストール手順の動画</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">必要なソフトウェア のインストール</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="iis.html">IISのセットアップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql-server.html">SQL Serverのセットアップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solr.html">Solrのセットアップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prep-sif.html">SIFに必要なソフトウェアのインストール</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Microsoft Visual C++ 2015 再配布可能パッケージのインストール</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#microsoft-visual-c-2015-redistributable">Microsoft Visual C++ 2015 Redistributable　のダウンロードとインストール</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Sitecore のインストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">補足情報</a></li>
 </ul>
 
             
@@ -138,9 +143,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">補足情報</a> &raquo;</li>
+          <li><a href="index.html">必要なソフトウェア のインストール</a> &raquo;</li>
         
-      <li>レジストリ キー へのアクセスが拒否されました。エラーの回避</li>
+      <li>Microsoft Visual C++ 2015 再配布可能パッケージのインストール</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -157,20 +162,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="id1">
-<h1>レジストリ キー へのアクセスが拒否されました。エラーの回避<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>SitecoreのWebサイトが既定の ApplicationPoolIdentity ユーザーで実行されている場合、Sitecoreのログファイルに次のような警告メッセージが記録されます。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>レジストリ キー &#39;Global&#39; へのアクセスが拒否されました。
-</pre></div>
+  <div class="section" id="microsoft-visual-c-2015">
+<h1>Microsoft Visual C++ 2015 再配布可能パッケージのインストール<a class="headerlink" href="#microsoft-visual-c-2015" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Sitecore 9.0 Update-1 以降をインストールする場合は、 Microsoft Visual C++ 2015 再頒布可能パッケージ をインストールする必要があります。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Sitecore 9.0 Initial Release をセットアップする場合は、本手順はスキップできます。</p>
 </div>
-<p>これはSitecore の パフォーマンスログを有効化している状態でかつ、アプリケーションプールの実行ユーザーが <code class="docutils literal notranslate"><span class="pre">Performance</span> <span class="pre">Log</span> <span class="pre">Users</span></code> グループのメンバーになっていない場合に発生します。</p>
-<p>そのため、この問題を回避するには、 アプリケーションプールの実行ユーザーをデフォルトの ApplicationPoolIdentity から Network Service に変更します。</p>
-<div class="figure">
-<img alt="../_images/misc-regerr01.png" src="../_images/misc-regerr01.png" />
-</div>
-<p>もしくは、アプリケーションプールの実行ユーザーを <code class="docutils literal notranslate"><span class="pre">Performance</span> <span class="pre">Log</span> <span class="pre">Users</span></code> グループのメンバーにします。 デフォルトのApplicationPoolIdentity が実行ユーザーに指定されている場合は、実際にApplicationPoolIdentityというユーザーがいるわけではありません。例えば xp0.sc というサイトのApplicationPoolIdentityの実際のアカウントは、次の図のように <code class="docutils literal notranslate"><span class="pre">IIS</span> <span class="pre">AppPool\xp0.sc</span></code> になります。</p>
-<div class="figure">
-<img alt="../_images/misc-regerr02.png" src="../_images/misc-regerr02.png" />
+<p>Visual Studio 2015 などを同じマシンにインストールしている場合は、すでにインストールされている可能性があります。</p>
+<div class="section" id="microsoft-visual-c-2015-redistributable">
+<h2>Microsoft Visual C++ 2015 Redistributable　のダウンロードとインストール<a class="headerlink" href="#microsoft-visual-c-2015-redistributable" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference external" href="https://www.microsoft.com/ja-jp/download/details.aspx?id=53587">https://www.microsoft.com/ja-jp/download/details.aspx?id=53587</a>  にアクセスして、再配布可能パッケージをダウンロードしてインストールしてください。</p>
 </div>
 </div>
 
@@ -182,10 +184,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="japaneseui.html" class="btn btn-neutral float-right" title="日本語化の設定" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../installation/index.html" class="btn btn-neutral float-right" title="Sitecore のインストール" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="補足情報" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="prep-sif.html" class="btn btn-neutral" title="SIFに必要なソフトウェアのインストール" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
